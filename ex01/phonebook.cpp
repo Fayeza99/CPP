@@ -26,7 +26,6 @@ int is_valid(const std::string& phone_n)
 	return (1);
 }
 
-
 void PhoneBook::add_contact()
 {
 	int i;
@@ -45,7 +44,7 @@ void PhoneBook::add_contact()
 			break;
 		i++;
 	}
-	if (i == 3)
+	if (i == 3 && f_n.empty())
 		return ;
 	std::cout << GREEN <<"Enter Last Name: "<< RESET;
 	std::getline(std::cin, l_n);
@@ -61,7 +60,7 @@ void PhoneBook::add_contact()
 			break;
 		i++;
 	}
-	if (i == 3)
+	if (i == 3 && l_n.empty())
 		return ;
 	std::cout << GREEN <<"Enter Nickname: "<< RESET;
 	std::getline(std::cin, nick_n);
@@ -77,7 +76,7 @@ void PhoneBook::add_contact()
 			break;
 		i++;
 	}
-	if (i == 3)
+	if (i == 3 && nick_n.empty())
 		return ;
 	std::cout << GREEN <<"Enter Phone Number: "<< RESET;
 	std::getline(std::cin, phone_n);
@@ -93,7 +92,7 @@ void PhoneBook::add_contact()
 			break;
 		i++;
 	}
-	if (i == 3)
+	if (i == 3 && phone_n.empty())
 		return ;
 	i = 1;
 	while (i < 3 && !is_valid(phone_n))
@@ -105,7 +104,7 @@ void PhoneBook::add_contact()
 			break;
 		i++;
 	}
-	if (i == 3)
+	if (i == 3 && !is_valid(phone_n))
 		return ;
 	std::cout << GREEN <<"Enter Darkest Secret: "<< RESET;
 	std::getline(std::cin, d_s);
@@ -121,7 +120,7 @@ void PhoneBook::add_contact()
 			break;
 		i++;
 	}
-	if (i == 3)
+	if (i == 3 && d_s.empty())
 		return ;
 	contacts[next_contact].set_contact(f_n, l_n, nick_n, phone_n, d_s);
 	next_contact = (next_contact + 1) % 8;

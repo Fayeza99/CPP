@@ -12,7 +12,7 @@ bool Replace::replaceInFile()
 		std::cerr << "Search and replace strings must not be empty" << std::endl;
 		return false;
 	}
-	std::ifstream inputFile(file_name);
+	std::ifstream inputFile(file_name.c_str());
 	if (!inputFile.is_open())
 	{
 		std::cerr << "Error opening file: " << file_name << std::endl;
@@ -42,7 +42,7 @@ bool Replace::replaceInFile()
 
 	result.append(fileContent, last_pos, fileContent.length() - last_pos);
 
-	std::ofstream outputFile(file_name + ".replace");
+	std::ofstream outputFile((file_name + ".replace").c_str());
 	if (!outputFile.is_open())
 	{
 	    std::cerr << "Error opening file for writing: " << file_name << std::endl;

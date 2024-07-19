@@ -45,8 +45,8 @@ bool Replace::replaceInFile()
 	std::ofstream outputFile((file_name + ".replace").c_str());
 	if (!outputFile.is_open())
 	{
-	    std::cerr << "Error opening file for writing: " << file_name << std::endl;
-	    return false;
+		std::cerr << "Error opening file for writing: " << file_name << std::endl;
+		return false;
 	}
 	outputFile << result;
 	outputFile.close();

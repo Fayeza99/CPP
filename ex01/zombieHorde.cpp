@@ -13,9 +13,8 @@ Zombie* zombieHorde( int N, std::string name )
 	int i = 0;
 	while (i < N)
 	{
-		std::ostringstream oss;
-		oss << name << (i + 1);
-		zombie_horde[i].setName(oss.str());
+		// std::string zombie_name = name + std::to_string(i + 1);
+		zombie_horde[i].setName(name);
 		i++;
 	} 
 	return (zombie_horde);

@@ -28,13 +28,12 @@ std::ostream& operator<<(std::ostream& out, const Point& point)
 	return out;
 }
 
-// // Point.cpp
-// Point &Point::operator=(const Point &other)
-// {
-//     if (this != &other) // Avoid self-assignment
-//     {
-//         this->x = other.x; // Uses Fixed's assignment operator
-//         this->y = other.y; // Uses Fixed's assignment operator
-//     }
-//     return *this;
-// }
+Point &Point::operator=(const Point &other)
+{
+    if (this != &other) // Avoid self-assignment
+    {
+        this->getX() = other.x; // Uses Fixed's assignment operator
+        this->getY() = other.y; // Uses Fixed's assignment operator
+    }
+    return *this;
+}

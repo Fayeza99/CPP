@@ -105,16 +105,12 @@ bool Fixed::operator!=(const Fixed& other)const
 
 Fixed Fixed::operator+(const Fixed& other)
 {
-	Fixed result;
-	result.setRawBits(this->value + other.value);
-	return result;
+	return (this->toFloat() + other.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed& other)
 {
-	Fixed result;
-	result.setRawBits(this->value - other.value);
-	return result;
+	return (this->toFloat() - other.toFloat());
 }
 
 

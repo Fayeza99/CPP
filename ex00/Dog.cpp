@@ -13,10 +13,9 @@ Dog::Dog(std::string Type)
 	std::cout << "Dog created by parameterized constructor" << std::endl;
 }
 
-Dog::Dog(const Dog &A)
+Dog::Dog(const Dog& A) : Animal(A)
 {
-	this->type = A.type;
-	std::cout << "Dog created by copy constructor" << std::endl;
+	std::cout << "Dog copied!" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &A)

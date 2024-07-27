@@ -14,10 +14,9 @@ Cat::Cat(std::string Type)
 }
 
 
-Cat::Cat(const Cat &A)
+Cat::Cat(const Cat& A) : Animal(A)
 {
-	this->type = A.type;
-	std::cout << "Cat created by copy constructor" << std::endl;
+	std::cout << "Cat copied!" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other)

@@ -38,12 +38,14 @@ int main()
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << dogA.getBrain()->getIdea(i) << std::endl;
+		std::cout << "-------" << std::endl;
 	}
 
 	std::cout << "dogB's Brain Ideas:" << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << dogB.getBrain()->getIdea(i) << std::endl;
+		std::cout << "-------" << std::endl;
 	}
 	return (0);
 }

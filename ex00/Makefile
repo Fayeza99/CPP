@@ -15,7 +15,7 @@ COLOUR_END = \033[0m
 
 CC = c++
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./include/
+CFLAGS = -Wall -Wextra -Werror -I./include/
 
 SRC = main.cpp ScalarConverter.cpp 
 

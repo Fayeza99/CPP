@@ -83,8 +83,7 @@ void converToChar(double result)
 	int roundedResult = static_cast<int>(std::round(result));
 
 	if (roundedResult >= 32 && roundedResult <= 126) {
-		roundedResult = static_cast<char>(roundedResult);
-		std::cout << "Char: " << roundedResult << std::endl;
+		std::cout << "Char: " << static_cast<char>(roundedResult) << std::endl;
 	}
 	else {
 		std::cerr << "Char: Non-displayable character"<< std::endl ;
@@ -145,6 +144,10 @@ void formatPseudoLiterals(const std::string& literal) {
 
 void ScalarConverter::convert(const std::string s)
 {
+	if (s == "nan" || s == "-inf" || s == "+inf" || s == "inf" || s == "nanf" || s == "-inff" || s == "+inff" || s == "inff")
+	{	formatPseudoLiterals(s);
+		return;
+	}
 	std::string str = get_str(s);
 	if (str[0] == '\0')
 	{
@@ -157,10 +160,6 @@ void ScalarConverter::convert(const std::string s)
 	double	doubleV;
 	float	floatV;
 
-	if (str == "nan" || str == "-inf" || str == "+inf" || str == "inf" || str == "nanf" || str == "-inff" || str == "+inff" || str == "inff")
-	{	formatPseudoLiterals(str);
-		return;
-	}
 
 	if(str.length() == 1 && str[1] == '\0' && !isdigit(str[0]))
 	{
